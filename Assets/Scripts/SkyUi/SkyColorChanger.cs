@@ -19,6 +19,10 @@ public class SkyColorChanger : MonoBehaviour
     public Slider r_slider;
     public Slider g_slider;
     public Slider b_slider;
+    [Header("Шестерёнки")]
+    public Animator topGear;
+    public Animator midGear;
+    public Animator botGear;
 
     [Range(0, 255)]
     private int s_R;
@@ -36,6 +40,9 @@ public class SkyColorChanger : MonoBehaviour
         _isSwitched = true;
         if (isNext && _id + 1 < 3) _id++;
         else if (!isNext && _id - 1 >= 0) _id--;
+        topGear.SetBool("isRotated", false);
+        midGear.SetBool("isRotated", false);
+        botGear.SetBool("isRotated", false);
         ImageSize(false, topImage);
         ImageSize(false, midImage);
         ImageSize(false, botImage);
@@ -43,12 +50,16 @@ public class SkyColorChanger : MonoBehaviour
         {
             case 0:
                 ImageSize(true, topImage);
+                topGear.SetBool("isRotated", true);
                 break;
             case 1:
                 ImageSize(true, midImage);
+
+                midGear.SetBool("isRotated", true);
                 break;
             case 2:
                 ImageSize(true, botImage);
+                botGear.SetBool("isRotated", true);
                 break;
         }
 
