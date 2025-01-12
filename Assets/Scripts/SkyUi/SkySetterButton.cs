@@ -16,7 +16,12 @@ public class SkySetterButton : MonoBehaviour
     #endregion
 
     #region Default
-    private void Start() => SetMyManager(GameObject.Find("Scene Settings")); // оепедекюрэ, щрн йняршкэ !!!!!
+    private void Start()
+    {
+        SetMyManager(GameObject.Find("Scene Settings")); // оепедекюрэ, щрн йняршкэ !!!!!
+        gameObject.GetComponent<Image>().color = mid;
+    }
+
     public void SetMyManager(GameObject _manager)
     {
         myManager = _manager;

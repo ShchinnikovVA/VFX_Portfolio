@@ -64,7 +64,12 @@ public class GroupCreater : MonoBehaviour
     #endregion
 
     #region Default
-    private void Start() => ChangeList(true);
+    private void Start()
+    {
+        ChangeList(true);
+        ChangeList(false);
+    }
+
     public GameObject GetItem() => _newItem; // возвращает только что созданный итем
     public void DeleteItem() // удаляет итем, его родитель остаётся
     {

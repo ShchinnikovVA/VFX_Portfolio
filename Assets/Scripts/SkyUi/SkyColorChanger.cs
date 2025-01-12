@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,7 @@ public class SkyColorChanger : MonoBehaviour
     private int _id = 0;
     #endregion
 
-    #region Image Chenger
+    #region Image Changer
     public void ChangeColor(bool isNext) // функция листает страницы
     {
         _isSwitched = true;
@@ -78,6 +79,8 @@ public class SkyColorChanger : MonoBehaviour
         }
     public void ChangeColorImage() // назначить новый цвет
     {
+        Debug.Log(_id);
+        Debug.Log(_isSwitched);
         switch (_id)
         {
             case 0:
@@ -120,21 +123,25 @@ public class SkyColorChanger : MonoBehaviour
 
     public void AcceptColors()
     {
-        _id = 0;
         ChangeColor(false);
+        ChangeColor(false);
+        //_id = 0;
         groupCreater.GetItem().GetComponent<SkySetterButton>().TopColor(topImage.color);
         groupCreater.GetItem().GetComponent<SkySetterButton>().MidColor(midImage.color);
         groupCreater.GetItem().GetComponent<SkySetterButton>().BotColor(botImage.color);
+        //ImageSize(true, topImage);
     }
     public void UpdatePalette()
     {
         byte count = 255; //или 0
-        topImage.color = new Color32(count, count, count, count);
-        midImage.color = new Color32(count, count, count, count);
-        botImage.color = new Color32(count, count, count, count);
+        topImage.color = new Color32(count, count, count, 255);
+        midImage.color = new Color32(count, count, count, 255);
+        botImage.color = new Color32(count, count, count, 255);
         r_slider.value = count;
         g_slider.value = count;
         b_slider.value = count;
     }
     #endregion
+
+  
 }
