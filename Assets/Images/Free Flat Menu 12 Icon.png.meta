@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02b95ae4605dbb948aa440a62175c40e
+guid: 4ce624e3d198e86438d872c3a6b74c39
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,5 +107,6 @@ AssetOrigin:
   productId: 202525
   packageName: 'UX Flat Icons [Free]'
   packageVersion: 2019.1.1
-  assetPath: Assets/Images/Free Flat Button Solid Cross Icon.png
+  assetPath: Assets/_Heathen Engineering/Assets/UX/Icons/Flat Icons [Free]/Free Flat
+    Menu 12 Icon.png
   uploadId: 451587

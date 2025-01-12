@@ -8,8 +8,16 @@ public class CameraMovement : MonoBehaviour
     public float maxShift = 1000.0f; // Maximum speed when holding shift
     public float camSens = 0.25f; // How sensitive it is with mouse
     private Vector3 lastMouse = new Vector3(255, 255, 255); // position of the last mouse
-    private float totalRun = 1.0f;
+    //private float totalRun = 1.0f;
     private float verticalAngle = 0.0f; // Угол поворота относительно оси Y
+
+    // Ограничения по осям
+    private float xMin = -100.0f;
+    private float xMax = 100.0f;
+    private float yMin = 0.5f;
+    private float yMax = 100.0f;
+    private float zMin = -100.0f;
+    private float zMax = 100.0f;
 
     void Update()
     {
@@ -48,6 +56,13 @@ public class CameraMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) transform.Translate(0, 0, -translation);
         if (Input.GetKey(KeyCode.A)) transform.Translate(-translation, 0, 0);
         if (Input.GetKey(KeyCode.D)) transform.Translate(translation, 0, 0);
+
+        // Ограничение позиции камеры
+        float clampedX = Mathf.Clamp(transform.position.x, xMin, xMax);
+        float clampedY = Mathf.Clamp(transform.position.y, yMin, yMax);
+        float clampedZ = Mathf.Clamp(transform.position.z, zMin, zMax);
+
+        transform.position = new Vector3(clampedX, clampedY, clampedZ);
 
     }
 
