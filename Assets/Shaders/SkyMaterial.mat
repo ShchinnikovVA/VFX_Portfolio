@@ -44,9 +44,9 @@ Material:
     - _QueueOffset: 0
     - _Zenit: 1
     m_Colors:
-    - _BotColor: {r: 0.17584966, g: 0, b: 0.3271686, a: 1}
-    - _MidColor: {r: 0.6591456, g: 0.44484064, b: 0.94301724, a: 1}
-    - _TopColor: {r: 0.34924826, g: 0.097232714, b: 0.68320584, a: 1}
+    - _BotColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MidColor: {r: 0, g: 0, b: 0, a: 1}
+    - _TopColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2789922516027438439
